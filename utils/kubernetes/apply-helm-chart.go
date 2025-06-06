@@ -478,6 +478,7 @@ func generateAction(actionConfig *action.Configuration, cfg ApplyHelmChartConfig
 			act.CreateNamespace = cfg.CreateNamespace
 			act.Namespace = cfg.Namespace
 			act.DryRun = cfg.DryRun
+			act.SkipCRDs = cfg.SkipCRDs
 			if _, err := act.Run(c, cfg.OverrideValues); err != nil {
 				return ErrApplyHelmChart(err)
 			}
